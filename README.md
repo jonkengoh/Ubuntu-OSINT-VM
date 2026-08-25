@@ -29,7 +29,7 @@ The initial environment is designed for Apple Silicon hardware.
 |---|---|
 | Host | Apple Silicon MacBook Pro |
 | Host Architecture | ARM64 / Apple Silicon |
-| Virtualization | VMware Fusion |
+| Virtualization | UTM |
 | Guest OS | Ubuntu 26.04 LTS |
 | Guest Architecture | ARM64 / AArch64 |
 | CPU | 4 vCPU |
@@ -39,7 +39,7 @@ The initial environment is designed for Apple Silicon hardware.
 
 The VM configuration may be adjusted as the requirements of the OSINT coursework become clearer.
 
-ARM64 Compatibility
+### ARM64 Compatibility
 
 Because the host system uses Apple Silicon, ARM64 compatibility is an important consideration throughout the project.
 
@@ -58,7 +58,7 @@ Architecture limitations and workarounds will be documented when necessary.
 
 ⸻
 
-Reproducibility
+## Reproducibility
 
 The virtual machine is treated as a disposable environment, while the repository acts as the source of truth for its configuration.
 
@@ -100,7 +100,7 @@ Package versions will generally follow the supported Ubuntu repositories unless 
 
 The project is intentionally being developed incrementally.
 
-Base Environment
+### Base Environment
 
 The initial environment focuses on general-purpose Linux functionality rather than immediately installing a large collection of OSINT tools.
 
@@ -114,7 +114,7 @@ Planned base components include:
 * Environment verification
 * Documentation and troubleshooting
 
-OSINT Environment
+### OSINT Environment
 
 OSINT-specific tooling will be added as requirements become known.
 
@@ -153,7 +153,7 @@ Sensitive investigation data should remain separate from the Git repository.
 
 ⸻
 
-Repository Structure
+## Repository Structure
 
 The repository is intentionally kept small during the initial development stages.
 
@@ -184,16 +184,16 @@ OSINT-specific tools and configurations will only be added when there is a clear
 
 ## Development Phases
 
-Phase 1 — Architecture
+### Phase 1 — Architecture
 
-* Select virtualization platform
-* Select Ubuntu release
-* Select ARM64 architecture
-* Define initial VM resources
-* Define initial networking approach
-* Document final architecture
+* ✅ Select virtualization platform (UTM) 
+* ✅ Select Ubuntu release (Ubuntu 26.04 LTS ARM64) 
+* ✅ Select ARM64 architecture
+* ✅ Define initial VM resources (4 vCPU / 8 GB RAM / 80 GB disk)
+* ✅ Define initial networking approach (Networking NAT / Shared Networking)
+* ✅ Document final architecture
 
-Phase 2 — VM Creation
+### Phase 2 — VM Creation
 
 * Obtain Ubuntu ARM64 installation image
 * Create VMware Fusion VM
@@ -204,7 +204,7 @@ Phase 2 — VM Creation
 * Verify guest architecture
 * Create clean baseline snapshot
 
-Phase 3 — Repository Initialization
+### Phase 3 — Repository Initialization
 
 * Create repository
 * Add README
@@ -213,7 +213,7 @@ Phase 3 — Repository Initialization
 * Add initial setup scripts
 * Document VM configuration
 
-Phase 4 — Base Environment
+### Phase 4 — Base Environment
 
 * Implement system update process
 * Define base package list
@@ -223,7 +223,7 @@ Phase 4 — Base Environment
 * Implement bootstrap script
 * Implement verification script
 
-Phase 5 — Reproducibility
+### Phase 5 — Reproducibility
 
 * Test setup from a clean VM
 * Improve idempotency
@@ -271,7 +271,7 @@ The exact snapshot strategy may evolve as the environment grows.
 
 Changes are intended to be committed incrementally using descriptive Conventional Commit-style messages.
 
-Examples:
+### Examples:
 ```
 chore: initialize repository structure
 docs: add Ubuntu VM setup guide
@@ -289,11 +289,11 @@ Commits should represent logical changes rather than large collections of unrela
 
 ## Current Status
 
-Phase 1 — Architecture
+### Phase 1 — Architecture ✅
 
 The initial architecture has been defined:
 
-* VMware Fusion
+* UTM
 * Ubuntu 26.04 LTS
 * ARM64 / AArch64
 * 4 vCPU
