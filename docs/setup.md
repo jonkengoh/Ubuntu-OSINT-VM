@@ -7,6 +7,7 @@ Download Ubuntu from https://ubuntu.com/download/desktop:
 Select ARM 64-bit Architecture for ARM-based hardware.
 
 You should see the download confirmation:
+
 ![Ubuntu Download Success screen](images/vm-creation/02-ubuntu-download-confirm.png)
 
 ## 1. Create the Virtual Machine
@@ -28,6 +29,7 @@ Select **Linux** from the list:
 ![Linux VM configuration](images/vm-creation/05-select-linux.png)
 
 Provide the Ubuntu ARM64 installation image and select Apple Virtualization:
+
 ![Linux VM configuration](images/vm-creation/06-select-arm64iso.png)
 
 
