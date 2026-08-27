@@ -6,7 +6,7 @@ The project focuses on building a clean, maintainable, and reproducible ARM64 Li
 
 The virtual machine itself is not stored in this repository. Instead, the repository contains documentation, configuration, setup scripts, verification tools, and other resources required to reproduce the environment.
 
-⸻
+---
 
 ## Project Goals
 
@@ -19,7 +19,7 @@ The virtual machine itself is not stored in this repository. Instead, the reposi
 * Demonstrate practical Linux administration and software engineering practices.
 * Provide clear troubleshooting and recovery documentation.
 
-⸻
+---
 
 ## Architecture
 
@@ -56,7 +56,7 @@ x86_64-only tools will not be assumed to work correctly on the native ARM64 VM.
 
 Architecture limitations and workarounds will be documented when necessary.
 
-⸻
+---
 
 ## Reproducibility
 
@@ -86,15 +86,17 @@ Known-good OSINT environment
 
 The eventual goal is to support a workflow similar to:
 
+```bash
 git clone <repository-url>
 cd ubuntu-osint-vm
 ./scripts/bootstrap.sh
+```
 
 Setup scripts should be designed to be as idempotent as practical, with explicit dependencies, useful error messages, and verification of important configuration.
 
 Package versions will generally follow the supported Ubuntu repositories unless a specific version is required for compatibility or reproducibility.
 
-⸻
+---
 
 ## Project Scope
 
@@ -131,7 +133,7 @@ Each tool will be assessed for:
 
 Course-specific tooling will be kept separate from the generic base environment where appropriate.
 
-⸻
+---
 
 ## Security Considerations
 
@@ -151,7 +153,7 @@ The environment therefore follows several security principles:
 
 Sensitive investigation data should remain separate from the Git repository.
 
-⸻
+---
 
 ## Repository Structure
 
@@ -180,7 +182,7 @@ The structure will evolve as additional requirements are introduced.
 
 OSINT-specific tools and configurations will only be added when there is a clear requirement for them.
 
-⸻
+---
 
 ## Development Phase Progress
 
@@ -210,7 +212,8 @@ OSINT-specific tools and configurations will only be added when there is a clear
 * ✅ Configure networking
 * ✅ Install Ubuntu
 * ✅ Verify guest architecture
-* Create clean baseline snapshot
+* ✅ Test/Check Configurations
+* ✅ Create clean baseline VM backup
 
 ### Phase 4 — Base Environment
 
@@ -241,15 +244,15 @@ Course-specific requirements will be evaluated and incorporated as they become a
 * Add verification
 * Document tool-specific limitations
 
-⸻
+---
 
-## Snapshots and Backups
+## VM Backups and Recovery
 
-VM snapshots are intended primarily for convenient rollback during development and configuration changes.
+VM Backups are intended primarily for convenient rollback during development and configuration changes.
 
 They are not considered the source of truth for environment reproducibility.
 
-The repository provides the reproducible configuration, while VM backups provide disaster recovery and snapshots provide convenient rollback points.
+The repository provides the reproducible configuration, while VM backups provide disaster recovery and provide convenient rollback points.
 
 Example milestones may include:
 ```
@@ -262,9 +265,9 @@ Base Environment Complete
 Course Environment Complete
 ```
 
-The exact snapshot strategy may evolve as the environment grows.
+The exact backup strategy may evolve as the environment grows.
 
-⸻
+---
 
 ## Git Workflow
 
@@ -284,25 +287,27 @@ docs: document course-specific tooling
 ```
 Commits should represent logical changes rather than large collections of unrelated modifications.
 
-⸻
+---
 
 ## Current Status
 
-### Phase 1 — Architecture ✅
+### Phase 3 — VM Creation ✅
 
 The initial architecture has been defined:
 
-* UTM
-* Ubuntu 26.04 LTS
-* ARM64 / AArch64
-* 4 vCPU
-* 8 GB RAM
-* 80 GB virtual storage
-* NAT / Shared Networking
+* Obtain Ubuntu ARM64 installation image
+* Create UTM VM
+* Configure CPU and memory
+* Configure virtual storage
+* Configure networking
+* Install Ubuntu
+* Verify guest architecture
+* Test/Check Configurations
+* Create clean baseline VM backup
 
-The next stage is creation of the initial Ubuntu ARM64 virtual machine.
+Next step is to setup the **base environment**
 
-⸻
+---
 
 ## License
 
