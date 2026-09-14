@@ -54,7 +54,7 @@ cat /etc/apt/apt.conf.d/20auto-upgrades
 sudo unattended-upgrade --dry-run --debug
 ```
 
-![Check policy](images/03-vm-update-scripts/06-check-uu-status.png)
+![Check and run dry run](images/03-vm-update-scripts/06-check-uu-status.png)
 
 
 ## If USU is not configured:
@@ -66,7 +66,7 @@ cd scripts/
 sudo nano security_updates.sh
 ```
 
-![Check systemctl](images/03-vm-update-scripts/07-create-sus.png)
+![Create shell script](images/03-vm-update-scripts/07-create-sus.png)
 
 Run the file to configure automatic security updates
 
@@ -75,4 +75,4 @@ chmod +x security_updates.sh
 ./security_updates.sh
 ```
 
-![Grep](images/03-vm-update-scripts/08-run-sus.png)
+![Run security update script](images/03-vm-update-scripts/08-run-sus.png)
